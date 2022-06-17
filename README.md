@@ -40,7 +40,7 @@ https://avengers-quotes-api.herokuapp.com/
 
 > ## License 📝
 
-[MIT License](https://github.com/giselle-ferreira/avengers-quotes-api/blob/main/LICENSE.md)
+This project is under the MIT License. Check the file for details: [MIT License](https://github.com/giselle-ferreira/avengers-quotes-api/blob/main/LICENSE.md)
 
 <br/>
 
