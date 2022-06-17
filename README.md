@@ -40,7 +40,7 @@ https://avengers-quotes-api.herokuapp.com/
 
 > ## License 📝
 
-[MIT License](https://github.com/giselle-ferreira/React-Task-List/blob/main/LICENSE.md)
+[MIT License](https://github.com/giselle-ferreira/avengers-quotes-api/blob/main/LICENSE.md)
 
 <br/>
 
