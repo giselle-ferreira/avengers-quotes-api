@@ -7,7 +7,7 @@ module.exports = {
             const quotes = await Quote.find();
             return res.status(200).json({ quotes })
         } catch (err) {
-            res.status(500).json({ error: err.message })
+            return res.status(500).json({ error: err.message })
         }
     },
 
@@ -33,15 +33,21 @@ module.exports = {
 
 
     async getQuote(req, res) {
-        const { _id } = req.params        
+        const _id = req.params;   
+        
+        if(!_id) {
+            return res.status(400).json({ error: "Invalid ID" })                
+        } 
 
-        try {
-            const quote = await Quote.findOne();
+        const quote = await Quote.findById(_id);
+       
+        try {            
             return res.status(200).json({ quote });
         } catch (err) {
-            res.status(500).json({ error: err.message });
+            return res.status(500).json({ error: err.message });
         }
     },
+    
 
 
     async updateQuote(req, res) {
@@ -62,13 +68,18 @@ module.exports = {
 
 
     async deleteQuote(req, res) {
-        const { _id } = req.params        
+        const _id  = req.params;
 
-        try {
-            await Quote.findByIdAndDelete();
+        if(!_id) {
+            return res.status(400).json({ error: "Invalid ID" })                
+        } 
+  
+        await Quote.findOneAndDelete(_id)    
+
+        try {            
             return res.status(200).json({ message: "Quote deleted successfully" });
         } catch (err) {
-            res.status(500).json({ error: err.message });
+            return res.status(500).json({ error: err.message });
         }
     },
 
